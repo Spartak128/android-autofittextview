@@ -7,7 +7,17 @@ android {
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+}
+
+dependencies {
+    compile 'androidx.annotation:annotation:1.7.1'
+
+    androidTestCompile 'androidx.test:runner:1.5.2'
+    androidTestCompile 'androidx.test:rules:1.5.0'
+    androidTestCompile 'androidx.test.ext:junit:1.1.5'
+    androidTestCompile 'junit:junit:4.13.2'
 }
 
 apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'

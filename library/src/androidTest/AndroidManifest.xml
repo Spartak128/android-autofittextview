@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="me.grantland.widget.test">
+
+    <application>
+        <activity
+            android:name="me.grantland.widget.AutofitTestActivity"
+            android:exported="false" />
+    </application>
+</manifest>
