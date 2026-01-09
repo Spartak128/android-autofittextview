@@ -1,4 +1,8 @@
 apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+group = project.findProperty('group') ?: 'com.github.Spartak128'
+version = project.findProperty('version') ?: '0.0.0'
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
@@ -20,4 +24,12 @@ dependencies {
     androidTestCompile 'junit:junit:4.13.2'
 }
 
-apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+afterEvaluate {
+    publishing {
+        publications {
+            mavenAar(MavenPublication) {
+                from components.android
+            }
+        }
+    }
+}
